@@ -1,0 +1,114 @@
+/*
+In HTML, different tags (like <h1>, <p>, <ul>, etc.) have default margins 
+and paddings set by the browser.
+For example:
+<h1> has a big margin on top and bottom.
+<ul> (lists) have padding by default.
+*/
+*{/*It removes all those default spaces and gives you a clean slate to design consistently.  */
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color: #29a6afa8;
+    text-align: center;
+    
+}
+
+.container{
+    height: 80vh; 
+    /* it takes 70% height  of body vh:- viewport height 
+    1vh = 1% of the height of the visible screen (browser window).  */
+   display: flex;          /* Turns the container into a flexbox layout */
+justify-content: center; /* Aligns items horizontally in the center */
+align-items: center;     /* Aligns items vertically in the center */
+ 
+}
+
+.game {
+    height: 60vmin;  /* vmin = 1% of the smaller side of the screen (width or height). 
+                        So 60vmin = 60% of the smaller side. (vmin:- viewport minimun)
+                        This helps keep the size responsive on different devices. */
+    width: 60vmin ;
+    display: flex;
+    flex-wrap: wrap;/* means jaghha nahi hai toh next line me ajaaw*/
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin/* gap beetween box is 1.5%*/;
+    
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    font-size: 8vmin;
+    color: #008b8b 
+    
+}
+
+/*
+Why use rem instead of px?
+rem makes your design responsive.
+If the user zooms in or changes default font size, your layout scales properly.
+⚡ Simple way to remember:
+rem = relative to the root font size
+px = fixed size
+*/
+#reset-btn{
+    padding: 1.5rem; /* 16px space inside the button */
+    font-size: 2rem; /* 1.25 × 16px = 20px text size */
+    background-color: #f90606;
+    border-radius: 1rem;/* rounded corners of 16px */
+    border:none;
+    
+}
+
+#new-btn{
+   padding: 1.5rem; 
+    font-size: 2rem; 
+    background-color: #a0034c;
+    border-radius: 1rem;
+    border:none;
+}
+
+.msg-container{
+    height: 100vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     gap: 8rem;
+
+}
+
+.hide{
+   display: none;
+}
+
+
+#msg{
+    font-size: 8vmin;
+}
+
+h1{
+   font-size: 8vmin;  
+}
+
+
+/*
+If viewport is 1200px wide × 800px tall -> smaller side = 800px.
+1vmin = 1% of 800 = 8px.
+
+If viewport is 1200px wide × 800px tall -> larger side = 1200px.
+1vmax = 1% of 1200 = 12px.
+*/
+
+#author{
+  margin-left: 70vmax;
+  font-size: 3vmin;
+}
